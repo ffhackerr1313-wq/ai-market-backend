@@ -1,0 +1,28 @@
+# Claude Code config — local only, not for deployment
+.claude/
+.claude.json
+
+# Environment — never commit secrets
+.env
+
+# SQLite DB — ephemeral, recreated on startup
+data/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs
+*.log
+
+# Test/tool caches
+.pytest_cache/
+*.egg-info/
+dist/
+build/
