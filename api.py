@@ -97,17 +97,10 @@ async def lifespan(_app: FastAPI):
     task.cancel()
 
 app = FastAPI(lifespan=lifespan)
-_CORS_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://localhost:3002",
-]
-if FRONTEND_URL:
-    _CORS_ORIGINS.append(FRONTEND_URL)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=_CORS_ORIGINS,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
